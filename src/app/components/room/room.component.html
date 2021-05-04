@@ -1,0 +1,6 @@
+<mat-card class="item" *ngFor="let room of roomsList$ | async">
+  <h2>{{ room.Name }}</h2>
+  <p>
+    {{ room.Description }}
+  </p>
+</mat-card>

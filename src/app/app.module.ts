@@ -1,31 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { BodyComponent } from './components/body/body.component';
-import { FooterComponent } from './components/footer/footer.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import { RoomsListComponent } from './components/body/rooms/rooms-list/rooms-list.component';
-import { RoomDetailComponent } from './components/body/rooms/room-detail/room-detail.component';
-import { RoomAddComponent } from './components/body/rooms/room-add/room-add.component';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {RoomComponent} from './components/room/room.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent,
     FooterComponent,
-    RoomsListComponent,
-    RoomDetailComponent,
-    RoomAddComponent
+    RoomComponent
   ],
   imports: [
+    // AngularFireModule.initializeApp(environment.firebase,''),
+    AngularFireDatabaseModule,
     BrowserModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
