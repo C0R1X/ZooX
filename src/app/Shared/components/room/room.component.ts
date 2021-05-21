@@ -12,7 +12,6 @@ import {Observable} from 'rxjs';
 export class RoomComponent {
 
   roomsList$=this.roomService.getRooms();
-  filteredRooms$: Observable<Room[]>;
 
   constructor(private roomService: RoomsService) { }
 }
