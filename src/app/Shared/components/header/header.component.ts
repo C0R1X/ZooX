@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatToolbar } from '@angular/material/toolbar';
+import { MatToolbar } from '@angular/material/toolbar'; 
+import { from } from 'rxjs';
+import {MatIcon} from '@angular/material/icon'
 
 @Component({
   selector: 'app-header',
@@ -13,4 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+}
+
+export class RoomsListComponent {
 }
