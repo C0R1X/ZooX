@@ -1,30 +1,63 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './components/header/header.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {RoomComponent} from './components/room/room.component';
-import {MatCardModule} from '@angular/material/card';
+import {HeaderComponent} from './Shared/components/header/header.component';
+import {FooterComponent} from './Shared/components/footer/footer.component';
+import {RoomComponent} from './Shared/components/room/room.component';
+import { MainComponent } from './Shared/components/main/main.component';
+import { RoomDetailsComponent } from './Shared/components/room-details/room-details.component';
+import { LoginComponent } from './Shared/components/login/login.component';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { LayoutModule } from '@angular/cdk/layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatIcon, MatIconModule} from '@angular/material/icon'
+import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar'
+
+
+import {AppRoutingModule} from './app-router';
+
+import {environment} from '../environments/environment';
+
+import {AuthService} from './Shared/services/auth.service';
+import { AuthGuard } from './Shared/services/auth-guard.service';
+import { from } from 'rxjs';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    RoomComponent
+    RoomComponent,
+    MainComponent,
+    RoomDetailsComponent,
+    LoginComponent,
   ],
   imports: [
-    // AngularFireModule.initializeApp(environment.firebase,''),
-    AngularFireDatabaseModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    LayoutModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'ang_firebase_test'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     MatToolbarModule,
-    MatIconModule,
-    MatCardModule
+    MatIconModule
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

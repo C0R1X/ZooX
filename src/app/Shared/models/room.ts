@@ -4,6 +4,9 @@ export interface IRoom {
   Id?;
   Name;
   Description;
+  PartyStyle?;
+  PartyFood?;
+  PartyMusic?;
   PartyDate?;
   RoomCreator?;
   Members?;
@@ -17,7 +20,8 @@ export class Room implements IRoom {
   private roomCreator: User;
   private members: User[];
 
-  constructor(name: string, desc: string) {
+  constructor(id: number, name: string, desc: string) {
+    this.id = id;
     this.name = name;
     this.description = desc;
   }
@@ -29,17 +33,27 @@ export class Room implements IRoom {
   get Name(): string {
     return this.name;
   }
-
   set Name(name: string) {
     this.name = name;
   }
 
-  get Description(): string {
+  get Description():string {
     return this.description;
   }
-
   set Description(desc: string) {
     this.description = desc;
+  }
+
+  get PartyStyle():string[]{
+    return this.PartyStyle;
+  }
+
+  get PartyFood():string[]{
+    return this.PartyFood;
+  }
+
+  get PartyMusic():string[]{
+    return this.PartyMusic;
   }
 
   get PartyDate(): Date {
@@ -48,6 +62,9 @@ export class Room implements IRoom {
 
   get RoomCreator(): User {
     return this.roomCreator;
+  }
+  set RoomCreator(u:User){
+    this.RoomCreator=u;
   }
 
   get Members(): User[] {

@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Room} from '../../models/room';
 import {RoomsService} from '../../services/rooms.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -9,9 +9,18 @@ import {Observable} from 'rxjs';
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.css']
 })
-export class RoomComponent {
+export class RoomComponent implements OnInit{
 
   roomsList$=this.roomService.getRooms();
 
-  constructor(private roomService: RoomsService) { }
+
+  constructor(
+    private router: Router,
+    private roomService: RoomsService
+  ) { }
+
+  ngOnInit() {
+
+  }
+
 }

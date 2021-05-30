@@ -1,0 +1,29 @@
+<div class="container"><div *ngIf="room$ | async as room">
+  <div class="party-short">
+    <div>
+      <h4>Room name: {{room.Name}} </h4>
+      <br>
+      <input type="text" class="formControl">
+    </div>
+    <br>
+    <div *ngIf="let style of style$ | async">
+      <h5>Party style: {{style}}</h5>
+      <br>
+      <input type="text" class="formControl">
+    </div>
+    <br>
+    <div *ngIf="let food of food$ | async">
+      <h5>Party food: {{food}}</h5>
+      <br>
+      <input type="text" class="formControl">
+    </div>
+    <div *ngIf="let music of music$">
+      <h5>Party music: {{music}}</h5>
+      <br>
+      <input type="text" class="formControl">
+    </div>
+  </div>
+  <div class="party-members">
+    <p>drag n drop</p>
+  </div>
+</div>

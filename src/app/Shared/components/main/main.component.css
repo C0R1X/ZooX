@@ -1,0 +1,10 @@
+.main-page h1.bottom_left{
+  font-size: 100px;
+  line-height: 0.8;
+  font-weight: 800;
+  bottom: 10%;
+  left: 10%;
+  position: absolute;
+  z-index: 1;
+  animation: fadein 5s;
+}

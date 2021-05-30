@@ -1,16 +1,9 @@
 
-
-<div class="container-wrapper">
-  <div class="container">
-
-  </div>
-</div>
-
-
-
 <mat-card class="item" *ngFor="let room of roomsList$ | async">
-  <h2>{{ room.Name }}</h2>
+  <a routerLink="{{room.Id}}" routerLinkActive="active">
+  <h2>{{ room.Name + room.Id}}</h2>
   <p>
     {{ room.Description }}
   </p>
+  </a>
 </mat-card>

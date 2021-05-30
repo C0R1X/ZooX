@@ -3,8 +3,12 @@
   <mat-icon>local_fire_department</mat-icon>
   <span>ZooX</span>
   <span class="example-spacer"></span>
-  <span>Menu</span>
+  <nav mat-tab-nav-bar mat-tab-align="center">
+    <a mat-tab-link routerLink="/main" routerLinkActive="active"> Main </a>
+    <a mat-tab-link routerLink="/rooms" routerLinkActive="active"> Rooms </a>
+    <a mat-tab-link routerLink="/login" routerLinkActive="active"> Log-in </a>
+  </nav>
   <span class="example-spacer"></span>
-  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon"></mat-icon>
 </mat-toolbar>
 </div>

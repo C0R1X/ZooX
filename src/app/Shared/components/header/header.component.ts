@@ -8,14 +8,10 @@ import {MatIcon} from '@angular/material/icon'
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
 
-export class RoomsListComponent {
-}
