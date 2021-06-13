@@ -2,28 +2,64 @@
   <div class="party-short">
     <div>
       <h4>Room name: {{room.Name}} </h4>
-      <br>
-      <input type="text" class="formControl">
+      <!-- <br>
+      <input type="text" class="formControl"> -->
     </div>
     <br>
     <div *ngIf="let style of style$ | async">
       <h5>Party style: {{style}}</h5>
-      <br>
-      <input type="text" class="formControl">
+      <!-- <br>
+      <input type="text" class="formControl"> -->
     </div>
     <br>
     <div *ngIf="let food of food$ | async">
       <h5>Party food: {{food}}</h5>
-      <br>
-      <input type="text" class="formControl">
+      <!-- <br>
+      <input type="text" class="formControl"> -->
     </div>
     <div *ngIf="let music of music$">
       <h5>Party music: {{music}}</h5>
-      <br>
-      <input type="text" class="formControl">
+      <!-- <br>
+      <input type="text" class="formControl"> -->
     </div>
   </div>
   <div class="party-members">
-    <p>drag n drop</p>
+    <div cdkDropListGroup>
+      <div class="example-container">
+        <h2>Invited on party</h2>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="Invited"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+    
+      <div class="example-container">
+        <h2>Done</h2>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="Offers"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of Offers" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+
+      <div class="example-container">
+        <h2>Your friends</h2>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="Friends"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of Friends" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

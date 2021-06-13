@@ -14,9 +14,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { LayoutModule } from '@angular/cdk/layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 
 import {MatIcon, MatIconModule} from '@angular/material/icon'
 import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar'
@@ -28,7 +29,7 @@ import {environment} from '../environments/environment';
 
 import {AuthService} from './Shared/services/auth.service';
 import { AuthGuard } from './Shared/services/auth-guard.service';
-import { from } from 'rxjs';
+
 
 
 
