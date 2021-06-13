@@ -29,6 +29,7 @@ import {environment} from '../environments/environment';
 
 import {AuthService} from './Shared/services/auth.service';
 import { AuthGuard } from './Shared/services/auth-guard.service';
+import { RegisterComponent } from './Shared/components/register/register.component';
 
 
 
@@ -42,6 +43,7 @@ import { AuthGuard } from './Shared/services/auth-guard.service';
     MainComponent,
     RoomDetailsComponent,
     LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,7 @@ import { AuthGuard } from './Shared/services/auth-guard.service';
     HttpClientModule,
     LayoutModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'ang_firebase_test'),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
